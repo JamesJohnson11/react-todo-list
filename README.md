@@ -1,16 +1,35 @@
-# React + Vite
+# Barry's Todo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A react application that lists all of the various tasks that Barry needs to complete.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Installation Instructions
 
-## Expanding the ESLint configuration
+1. In your terminal, navigate to the local folder where you would like your project files to be saved.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Run the following command to clone the remote repository locally:
+
+		git clone https://github.com/JamesJohnson11/react-todo-list.git
+
+1. Once cloned, navigate to the root project folder.
+
+		cd react-todo-list
+
+1. Run the following command to install all project dependencies:
+
+		npm install
+
+Once the project dependencies have been installed, you are ready to run the application.
+
+
+## Running the development server
+
+1. From your terminal, make sure you are in the project's root directory and run the following command:
+
+		npm run dev
+
+1. Open the browser of your choice and navigate to http://localhost:5173 to view the running application.
+
