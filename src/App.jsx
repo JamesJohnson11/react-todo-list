@@ -1,6 +1,6 @@
-import './App.css';
-import TodoList from './TodoList';
-import TodoForm from './TodoForm';
+import "./App.css";
+import TodoList from "./TodoList";
+import TodoForm from "./TodoForm";
 
 function App() {
   const username = "Barry";
@@ -11,7 +11,7 @@ function App() {
       <TodoForm />
       <TodoList />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
