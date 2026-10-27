@@ -7,19 +7,19 @@ function App() {
   const username = "Barry";
   const [todoList, setTodoList] = useState([]);
 
-  function addTodo({ todoTitle}) {
+  function addTodo(todoTitle) {
     const newTodo = {
       id: Date.now(),
       title: todoTitle
     }
 
-    setTodoList([newTodo, ...todoList]);
+    setTodoList((prevTodoList) => [ newTodo, ...prevTodoList]);
   }
 
   return (
     <div>
       <h1>{username}'s Todo List</h1>
-      <TodoForm onAddTodo={addTodo}/>
+      <TodoForm onAddTodo={addTodo} />
       <TodoList todoList={todoList} />
     </div>
   );
