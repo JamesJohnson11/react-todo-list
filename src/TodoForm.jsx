@@ -18,7 +18,7 @@ function TodoForm({ onAddTodo }) {
     <form onSubmit={handleAddTodo}>
       <label htmlFor="todoTitle">Todo</label>
       <input ref={inputRef} type="text" id="todoTitle" name="todoTitle" value={workingTodoTitle} onChange={(event) => setWorkingTodoTitle(event.target.value)} placeholder={'Add another todo...'} required />
-      <button type="submit">
+      <button type="submit" disabled={!workingTodoTitle.trim()}>
         Add Todo
       </button>
     </form>
