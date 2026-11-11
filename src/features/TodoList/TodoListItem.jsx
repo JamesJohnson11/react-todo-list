@@ -3,7 +3,7 @@ import TextInputWithLabel from "../../shared/TextInputWithLabel";
 import { isValidTodoTitle } from '../../utils/todoValidation';
 
 function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
-  const [isEditing, setIsEditing] = useState("false");
+  const [isEditing, setIsEditing] = useState(false);
   const [workingTitle, setWorkingTitle] = useState(todo.title);
 
   const handleCancel = () => {
