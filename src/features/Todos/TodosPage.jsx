@@ -170,7 +170,7 @@ function TodosPage({ token }) {
       {error && (
         <div role="alert" style={{ color: "red", marginBottom: "1rem" }}>
           <span>{error}</span>
-          <button type="button" onClick={() => setError(null)}>
+          <button type="button" onClick={() => setError('')}>
             Clear Error
           </button>
         </div>
