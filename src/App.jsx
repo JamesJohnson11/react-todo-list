@@ -1,5 +1,5 @@
 import "./App.css";
-import TodoPage from "./features/Todos/TodoPage";
+import TodosPage from "./features/Todos/TodosPage";
 import Header from "./shared/Header";
 import Logon from "./features/Logon";
 import { useState } from "react";
@@ -12,7 +12,7 @@ function App() {
     <>
       <Header token={token} onSetToken={setToken} onSetEmail={setEmail} />
       {token ? (
-        <TodoPage token={token} email={email} />
+        <TodosPage token={token} email={email} />
       ) : (
         <Logon onSetEmail={setEmail} onSetToken={setToken} />
       )}

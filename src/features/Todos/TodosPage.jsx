@@ -2,7 +2,7 @@ import TodoList from "./TodoList/TodoList";
 import TodoForm from "./TodoForm";
 import { useState, useEffect } from "react";
 
-function TodoPage({ token }) {
+function TodosPage({ token }) {
   const [todoList, setTodoList] = useState([]);
   const [error, setError] = useState("");
   const [isTodoListLoading, setIsTodoListLoading] = useState(false);
@@ -39,16 +39,10 @@ function TodoPage({ token }) {
       }
     }
 
-    fetchTodos();
+    if (token) {
+      fetchTodos();
+    }
   }, [token]);
-
-  if (isTodoListLoading) {
-    return <p>Loading todos...</p>;
-  }
-
-  if (error) {
-    return <p style={{ color: "red" }}>{error}</p>;
-  }
 
   async function addTodo(todoTitle) {
     const newTodo = {
@@ -89,7 +83,7 @@ function TodoPage({ token }) {
   }
 
   async function completeTodo(id) {
-    const originalTodo = todoList.map((todo) => todo.id === id);
+    const originalTodo = todoList.find((todo) => todo.id === id);
 
     setTodoList((prevTodoList) =>
       prevTodoList.map((todo) => {
@@ -120,6 +114,7 @@ function TodoPage({ token }) {
           if (todo.id === id) {
             return originalTodo;
           }
+          return todo;
         }),
       );
       setError(`Error completing todo: ${error.message}`);
@@ -127,7 +122,7 @@ function TodoPage({ token }) {
   }
 
   async function updateTodo(editedTodo) {
-    const originalTodo = todoList.map((todo) => {
+    const originalTodo = todoList.find((todo) => {
       todo.id === editedTodo.id;
     });
 
@@ -177,7 +172,7 @@ function TodoPage({ token }) {
         <div role="alert" style={{ color: "red", marginBottom: "1rem" }}>
           <span>{error}</span>
           <button type="button" onClick={() => setError(null)}>
-            Dismiss
+            Clear Error
           </button>
         </div>
       )}
@@ -191,4 +186,4 @@ function TodoPage({ token }) {
   );
 }
 
-export default TodoPage;
+export default TodosPage;
