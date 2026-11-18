@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header token={token} onSetToken={setToken} onSetEmail={setEmail} />
       {token ? (
         <TodosPage token={token} email={email} />
       ) : (
