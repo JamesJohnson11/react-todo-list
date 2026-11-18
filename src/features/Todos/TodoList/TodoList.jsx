@@ -1,7 +1,7 @@
 import TodoListItem from "./TodoListItem";
 
 function TodoList({ todoList, onCompleteTodo, onUpdateTodo }) {
-  const filteredTodoList = todoList.filter((todo) => !todo.isCompleted);
+  const filteredTodoList = todoList.filter((todo) => todo.isCompleted === false);
 
   return (
     <>
